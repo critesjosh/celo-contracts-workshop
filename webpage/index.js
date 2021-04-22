@@ -1,24 +1,39 @@
 let Web3 = require("web3")
 let ContractKit = require("@celo/contractkit")
 
+// Import the truffle contract artifact, so you can get the ABI and the deployed contract address
+
 let HelloWorld = require("../truffle/build/contracts/HelloWorld.json")
 
 let kit
 let helloWorldContract
-let alfajores_network_id = "44787"
+
+// Connect to the celo extension wallet
+// Get the users account
+// Initialize the contract that you want to interact with on the appropriate network
 
 const connectCeloWallet = async function () {
   if (window.celo) {
     try {
+
+      // Enable the extension to access the page if it isn't already enabled
       await window.celo.enable()
 
+      // Get the Celo provider injected by the extension wallet
       const web3 = new Web3(window.celo)
       kit = ContractKit.newKitFromWeb3(web3)
 
+      // Get the users accounts
       const accounts = await kit.web3.eth.getAccounts()
       kit.defaultAccount = accounts[0]
 
-      helloWorldContract = new kit.web3.eth.Contract(HelloWorld.abi, HelloWorld.networks[alfajores_network_id].address)
+      // Get the network that the user is connected to
+      let chainId = await kit.web3.eth.getChainId()
+      
+      // Initalize the contract
+      helloWorldContract = new kit.web3.eth.Contract(HelloWorld.abi, HelloWorld.networks[chainId].address)
+      
+      // Read the contract storage
       await getName()
     } catch (error) {
       console.log(`⚠️ ${error}.`)
