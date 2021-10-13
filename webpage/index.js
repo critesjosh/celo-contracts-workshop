@@ -8,7 +8,7 @@ let HelloWorld = require("../truffle/build/contracts/HelloWorld.json")
 let kit
 let helloWorldContract
 
-// Connect to the celo extension wallet
+// Connect to Metamask
 // Get the users account
 // Initialize the contract that you want to interact with on the appropriate network
 
