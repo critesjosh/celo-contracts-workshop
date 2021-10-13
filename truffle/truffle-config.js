@@ -18,14 +18,9 @@
  *
  */
 
-const ContractKit = require('@celo/contractkit')
 const Web3 = require('web3')
 require('dotenv').config({path: '../.env'})
-
-const web3 = new Web3(`https://celo-alfajores--rpc.datahub.figment.io/apikey/${process.env.FIGMENT_API_KEY}/`)
-const kit = ContractKit.newKitFromWeb3(web3)
-const account = web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_KEY)
-kit.connection.addAccount(account.privateKey)
+const HDWalletProvider = require("@truffle/hdwallet-provider");
 
 module.exports = {
   /**
@@ -47,11 +42,17 @@ module.exports = {
      network_id: "*",
     },
     alfajores: {
-      provider: kit.web3.currentProvider,
+      provider: new HDWalletProvider({
+        privateKeys: [process.env.PRIVATE_KEY],
+        providerOrUrl: `https://alfajores-forno.celo-testnet.org`
+      }),
       network_id: 44787
     },
     mainnet: {
-      provider: kit.web3.currentProvider,
+      provider: new HDWalletProvider({
+        privateKeys: [process.env.PRIVATE_KEY],
+        providerOrUrl: `https://alfajores-forno.celo-testnet.org`
+      }),
       network_id: 42220
     }
   }
