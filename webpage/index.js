@@ -13,14 +13,14 @@ let helloWorldContract
 // Initialize the contract that you want to interact with on the appropriate network
 
 const connectCeloWallet = async function () {
-  if (window.celo) {
+  if (window.ethereum) {
     try {
 
       // Enable the extension to access the page if it isn't already enabled
-      await window.celo.enable()
+      await window.ethereum.enable()
 
       // Get the Celo provider injected by the extension wallet
-      const web3 = new Web3(window.celo)
+      const web3 = new Web3(window.ethereum)
       kit = ContractKit.newKitFromWeb3(web3)
 
       // Get the users accounts
