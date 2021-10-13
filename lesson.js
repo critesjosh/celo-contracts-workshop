@@ -49,7 +49,7 @@ async function deployContract(){
     let receipt = await tx.waitReceipt()
 
     console.log(receipt)
-    console.log(`deploy tx: https://alfajores-blockscout.celo-testnet.org/tx/${receipt.transactionHash}/token_transfers `)
+    console.log(`deploy tx: https://alfajores-blockscout.celo-testnet.org/tx/${receipt.transactionHash}`)
 
     // Save the deployed contract address so you can reference it later
     contractAddress = receipt.contractAddress
@@ -159,4 +159,4 @@ async function writeWithEthers(){
 
     console.log(await helloWorldContract.getName())
 }
-writeWithEthers()
+// writeWithEthers()
