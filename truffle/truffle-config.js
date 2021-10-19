@@ -51,7 +51,7 @@ module.exports = {
     mainnet: {
       provider: new HDWalletProvider({
         privateKeys: [process.env.PRIVATE_KEY],
-        providerOrUrl: `https://forno.celo-testnet.org`
+        providerOrUrl: `https://forno.celo.org`
       }),
       network_id: 42220
     }
