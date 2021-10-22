@@ -9,7 +9,7 @@ In this repo you will go over how to deploy and interact with contracts on the C
 ## Get started
 
 1. Run `yarn install` in the project root.
-2. Run `node createAccount.js`. This will print new Celo account details. Copy the private key for your new account into the `PRIVATE_KEY` variable in `.env`.
+2. Run `node createAccount.js`. This will print new Celo account details. Copy the private key for your new account into the `PRIVATE_KEY` variable in `.env`. See `.envexample` for an example.
 3. Fund the account address on the Alfajores testnet here: https://celo.org/developers/faucet
 
 ## Remix Web IDE
