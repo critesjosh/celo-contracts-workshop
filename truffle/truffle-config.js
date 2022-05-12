@@ -46,14 +46,16 @@ module.exports = {
         privateKeys: [process.env.PRIVATE_KEY],
         providerOrUrl: `https://alfajores-forno.celo-testnet.org`
       }),
-      network_id: 44787
+      network_id: 44787,
+      gas: 6500000,
     },
     mainnet: {
       provider: new HDWalletProvider({
         privateKeys: [process.env.PRIVATE_KEY],
-        providerOrUrl: `https://forno.celo.org`
+        providerOrUrl: 'https://forno.celo.org'
       }),
-      network_id: 42220
+      network_id: 42220,
+      gas: 6500000
     }
   }
 };

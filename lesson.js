@@ -8,15 +8,15 @@
 const Web3 = require('web3')
 const ContractKit = require('@celo/contractkit')
 const celo_ethers = require('@celo-tools/celo-ethers-wrapper')
-const { Contract, ethers, utils, providers } = require('ethers')
+const { ethers } = require('ethers')
 
 require('dotenv').config({path: '.env'})
 
-const web3 = new Web3(`https://celo-alfajores--rpc.datahub.figment.io/apikey/${process.env.FIGMENT_API_KEY}/`)
+const web3 = new Web3(`https://alfajores-forno.celo-testnet.org`)
 
 // Import the file that includes the contract ABI and deployment code
 // Read more about the ABI here https://docs.soliditylang.org/en/latest/abi-spec.html
-const HelloWorld = require('./build/contracts/HelloWorld.json')
+const HelloWorld = require('./truffle/build/contracts/HelloWorld.json')
 
 const kit = ContractKit.newKitFromWeb3(web3)
 const account = web3.eth.accounts.privateKeyToAccount(process.env.PRIVATE_KEY)
