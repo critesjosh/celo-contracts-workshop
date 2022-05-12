@@ -19,6 +19,8 @@ const connectCeloWallet = async function () {
       // Enable the extension to access the page if it isn't already enabled
       await window.ethereum.enable()
 
+      console.log("Connected to Metamask")
+
       // Get the ethereum provider injected by metamask
       const web3 = new Web3(window.ethereum)
       kit = ContractKit.newKitFromWeb3(web3)

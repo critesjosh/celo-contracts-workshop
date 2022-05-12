@@ -4,7 +4,7 @@ In this repo you will go over how to deploy and interact with contracts on the C
 
 - `lesson.js` shows how to deploy and interact with contracts using basic SDKs (contractkit, web3.js and ethers.js)
 - The `./truffle/` directory shows how to deploy contracts using the [Truffle framework](https://www.trufflesuite.com/truffle) for managing contracts.
-- The `./webpage/` directory shows how to connect a webpage to deployed contracts using the [Celo extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh).
+- The `./webpage/` directory shows how to connect a webpage to deployed contracts using Metamask.
 
 ## Get started
 
@@ -14,7 +14,7 @@ In this repo you will go over how to deploy and interact with contracts on the C
 
 ## Remix Web IDE
 
-You can deploy contracts using the [Remix web-based IDE](https://remix.ethereum.org/). You will need the [Celo extension wallet](https://chrome.google.com/webstore/detail/celoextensionwallet/kkilomkmpmkbdnfelcpgckmpcaemjcdh) and enable the Celo plugin.
+You can deploy contracts using the [Remix web-based IDE](https://remix.ethereum.org/). You can use Metamask connected to the Celo network. You can read more about how to do that here: https://docs.celo.org/blog/code-metamask
 
 ## Hardhat
 
